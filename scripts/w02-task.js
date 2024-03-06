@@ -53,12 +53,13 @@ foodElement.innerHTML = favFood;
 
 /*Declare and instantiate a variable to hold another single favorite food item.*/
 let newFavFood = "Crab"
-
 favFood.push(newFavFood);
 foodElement.innerHTML += `<br>${favFood}`;
 
+/* Remove the first element in the favorite food array.*/
 favFood.shift();
 foodElement.innerHTML += `<br>${favFood}`;
 
+/* Remove the last element in the favorite food array.*/
 favFood.pop();
 foodElement.innerHTML += `<br>${favFood}`;

@@ -3,8 +3,11 @@ let tasks = [];
 
 function renderTasks(tasks) {
   // get the list element from the DOM
+  const listElement = document.querySelector("#todoList");
   // make sure it is empty
+  listElement.innerHTML = "";
   // loop through the tasks array. for each of them we need to add the HTML markup for a todo.
+  
 }
 
 function newTask() {

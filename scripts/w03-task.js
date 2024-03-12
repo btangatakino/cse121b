@@ -40,16 +40,27 @@ const multiplyNumbers = (number1, number2) => {
 document.querySelector("#multiplyNumbers").addEventListener("click", multiplyNumbers);
 
 /* Open Function Use - Divide Numbers */
-const divide = (number1, number2) => number1 / number2;
+const divide = (number1, number2) => (number1 / number2).toFixed(2);
 
 const divideNumbers = (number1, number2) => {
-    let dividend = Number(document.querySelector("#dividend").value);
-    let divisor = Number(document.querySelector("#divisor").value);
+    let dividend = parseFloat(document.querySelector("#dividend").value);
+    let divisor = parseFloat(document.querySelector("#divisor").value);
     document.querySelector("#quotient").value = divide(dividend, divisor);
 }
 
 document.querySelector("#divideNumbers").addEventListener("click", divideNumbers);
 
+/* Selection Structures*/
+function getTotal () {
+    // input
+    let subtotal = parseFloat(document.getElementById("subtotal").value);
+    // processing
+    if (document.getElementById("member").checked) {
+    subtotal = subtotal - subtotal * 0.2
+    }
+    document.getElementById("total").textContent = subtotal.toFixed(2);
+}
+document.getElementById("getTotal").addEventListener("click", getTotal);
 
 
 /* ARRAY METHODS - Functional Programming */

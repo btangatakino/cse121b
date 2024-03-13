@@ -58,20 +58,28 @@ function getTotal () {
     if (document.getElementById("member").checked) {
     subtotal = subtotal - subtotal * 0.2
     }
-    document.getElementById("total").textContent = subtotal.toFixed(2);
+    document.getElementById("total").textContent = `$${subtotal.toFixed(2)}`;
 }
 document.getElementById("getTotal").addEventListener("click", getTotal);
 
 
 /* ARRAY METHODS - Functional Programming */
 /* Output Source Array */
+let numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+
+document.querySelector("#array").innerHTML = numbersArray;
 
 /* Output Odds Only Array */
+document.querySelector("#odds").innerHTML = numbersArray.filter(number => number % 2 === 1);
 
 /* Output Evens Only Array */
+document.querySelector("#evens").innerHTML = numbersArray.filter(number => number % 2 === 0);
 
 /* Output Sum of Org. Array */
+document.querySelector("#sumOfArray").innerHTML = numbersArray.reduce((sum, number) => sum + number);
 
 /* Output Multiplied by 2 Array */
+document.querySelector("#multiplied").innerHTML = numbersArray.map(number => number * 2);
 
 /* Output Sum of Multiplied by 2 Array */
+document.querySelector("#sumOfMultiplied").innerHTML = (numbersArray.map(number => number * 2)).reduce((sum, number) => sum + number);

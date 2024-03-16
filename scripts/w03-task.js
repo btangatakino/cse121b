@@ -24,21 +24,30 @@ const subtractNumbers = function (number1, number2) {
     let subtractNumber2 = Number(document.querySelector("#subtract2").value);
     document.querySelector("#difference").value = subtract(subtractNumber1, subtractNumber2);
 }
-
 document.querySelector("#subtractNumbers").addEventListener("click", subtractNumbers);
 
 /* Arrow Function - Multiply Numbers */
 /*const fullName = (first, last) => `${first} ${last}`;*/
-const multiply = (number1, number2) => number1 * number2;
+/*const multiply = (number1, number2) => number1 * number2;
 
 const multiplyNumbers = (number1, number2) => {
     let factor1 = Number(document.querySelector("#factor1").value);
     let factor2 = Number(document.querySelector("#factor2").value);
     document.querySelector("#product").value = multiply(factor1, factor2);
 }
+*/
+const multiply = (number1, number2) => number1 * number2;
 
+const multiplyNumbers = () => {
+    let factor1 = Number(document.querySelector('#factor1').value);
+    let factor2 = Number(document.querySelector('#factor2').value);
+    document.querySelector('#product').value = multiply(factor1, factor2);
+};
+/*document.querySelector('#multipyNumbers').addEventListener('click', multiplyNumbers);*/
+document.getElementById('#multiplyNumbers').addEventListener('click', multiplyNumbers);
+/*
 document.querySelector("#multiplyNumbers").addEventListener("click", multiplyNumbers);
-
+*/
 /* Open Function Use - Divide Numbers */
 const divide = (number1, number2) => (number1 / number2).toFixed(2);
 

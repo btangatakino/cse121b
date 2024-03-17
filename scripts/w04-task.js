@@ -13,44 +13,23 @@ let myProfile = {
     placesLived: []
 };
 
-
 myProfile.placesLived.push(
-    {
-        place: "Mangaia, Cook Islands",
-        length: "23 years",
-        place: 
-    }
+    { place: "Mangaia, Cook Islands", duration: "22 years"},
+    { place: "Rarotonga, Cook Islands", duration: "20 years"},
+    { place: "Manihiki, Cook Islands", duration: "2 years"},
+    { place: "Laie, Hawaii", duration: "3 years"},
+    { place: "Auckland, New Zealand", duration: "7 years"}
 )
-
-
 
 /* DOM Manipulation - Output */
 
 /* Name */
 document.querySelector("#name").textContent = myProfile.name;
 /* Photo with attributes */
-document.querySelector("#photo").innerHTML = myProfile.photo; 
+document.querySelector("#photo").src = myProfile.photo.src;
+document.querySelector("#photo").alt = myProfile.name.alt;
 
 /* Favorite Foods List*/
-/* document.body.onload = addElement;
-
-function addElement() {
-  // create a new div element
-  const newDiv = document.createElement("div");
-
-  // and give it some content
-  const newContent = document.createTextNode("Hi there and greetings!");
-
-  // add the text node to the newly created div
-  newDiv.appendChild(newContent);
-
-  // add the newly created element and its content into the DOM
-  const currentDiv = document.getElementById("div1");
-  document.body.insertBefore(newDiv, currentDiv);
-} */
-
-//document.body.onload = addElement;
-
 //create a new <li> element
 myProfile.favoriteFoods.forEach(food => {
     let li = document.createElement("li");
@@ -65,5 +44,18 @@ myProfile.hobbies.forEach(hobby => {
 });
 
 /* Places Lived DataList */
+myProfile.placesLived.forEach( place => {
+    let dt = document.createElement("dt");
+    dt.textContent = place;    
+    document.querySelector("#places-lived").appendChild(dt);
+});
 
+myProfile.placesLived.forEach(duration => {
+    let dd = document.createElement("dd");
+    dd.textContent = duration;
+    document.querySelector("#places-lived").appendChild(dd);
+});
+
+document.querySelector("#places-lived").place = myProfile.placesLived.place;
+document.querySelector("#places-lived").duration = myProfile.placesLived.duration;
 

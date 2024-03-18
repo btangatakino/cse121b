@@ -14,11 +14,11 @@ let myProfile = {
 };
 
 myProfile.placesLived.push(
-    { place: "Mangaia, Cook Islands", duration: "22 years"},
-    { place: "Rarotonga, Cook Islands", duration: "20 years"},
-    { place: "Manihiki, Cook Islands", duration: "2 years"},
-    { place: "Laie, Hawaii", duration: "3 years"},
-    { place: "Auckland, New Zealand", duration: "7 years"}
+    { place: "Mangaia, Cook Islands", length: "22 years"},
+    { place: "Rarotonga, Cook Islands", length: "20 years"},
+    { place: "Manihiki, Cook Islands", length: "2 years"},
+    { place: "Laie, Hawaii", length: "3 years"},
+    { place: "Auckland, New Zealand", length: "7 years"}
 )
 
 /* DOM Manipulation - Output */
@@ -32,30 +32,25 @@ document.querySelector("#photo").alt = myProfile.name.alt;
 /* Favorite Foods List*/
 //create a new <li> element
 myProfile.favoriteFoods.forEach(food => {
-    let li = document.createElement("li");
-    li.textContent = food;
-    document.querySelector("#favorite-foods").appendChild(li);
+    let favFoodElem = document.createElement("li");
+    favFoodElem.textContent = food;
+    document.querySelector("#favorite-foods").appendChild(favFoodElem);
 });
 /* Hobbies List */
 myProfile.hobbies.forEach(hobby => {
-    let ul = document.createElement("ul");
-    ul.textContent = hobby;
-    document.querySelector("#hobbies").appendChild(ul);
+    let hobbyElem = document.createElement("ul");
+    hobbyElem.textContent = hobby;
+    document.querySelector("#hobbies").appendChild(hobbyElem);
 });
 
 /* Places Lived DataList */
-myProfile.placesLived.forEach( place => {
-    let dt = document.createElement("dt");
-    dt.textContent = place;    
-    document.querySelector("#places-lived").appendChild(dt);
+myProfile.placesLived.forEach(placeLived => {
+    let placesLivedPlace = document.createElement("dt");
+    placesLivedPlace.textContent = placeLived.place;
+    
+    let placesLivedLength = document.createElement("dd");
+    placesLivedLength.textContent = placeLived.length;
+
+    document.querySelector("#places-lived").appendChild(placesLivedPlace);
+    document.querySelector("#places-lived").appendChild(placesLivedLength);
 });
-
-myProfile.placesLived.forEach(duration => {
-    let dd = document.createElement("dd");
-    dd.textContent = duration;
-    document.querySelector("#places-lived").appendChild(dd);
-});
-
-document.querySelector("#places-lived").place = myProfile.placesLived.place;
-document.querySelector("#places-lived").duration = myProfile.placesLived.duration;
-

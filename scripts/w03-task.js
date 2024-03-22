@@ -11,7 +11,6 @@ function addNumbers (number1, number2) {
     let addNumber2 = Number(document.querySelector("#add2").value);
     document.querySelector("#sum").value = add(addNumber1, addNumber2);
 }
-
 document.querySelector("#addNumbers").addEventListener("click", addNumbers);
 
 /* Function Expression - Subtract Numbers */
@@ -27,27 +26,15 @@ const subtractNumbers = function (number1, number2) {
 document.querySelector("#subtractNumbers").addEventListener("click", subtractNumbers);
 
 /* Arrow Function - Multiply Numbers */
-/*const fullName = (first, last) => `${first} ${last}`;*/
-/*const multiply = (number1, number2) => number1 * number2;
-
-const multiplyNumbers = (number1, number2) => {
-    let factor1 = Number(document.querySelector("#factor1").value);
-    let factor2 = Number(document.querySelector("#factor2").value);
-    document.querySelector("#product").value = multiply(factor1, factor2);
-}
-*/
 const multiply = (number1, number2) => number1 * number2;
 
 const multiplyNumbers = () => {
     let factor1 = Number(document.querySelector('#factor1').value);
     let factor2 = Number(document.querySelector('#factor2').value);
     document.querySelector('#product').value = multiply(factor1, factor2);
-};
-/*document.querySelector('#multipyNumbers').addEventListener('click', multiplyNumbers);*/
+}
 document.getElementById('#multiplyNumbers').addEventListener('click', multiplyNumbers);
-/*
-document.querySelector("#multiplyNumbers").addEventListener("click", multiplyNumbers);
-*/
+
 /* Open Function Use - Divide Numbers */
 const divide = (number1, number2) => (number1 / number2).toFixed(2);
 
@@ -56,7 +43,6 @@ const divideNumbers = (number1, number2) => {
     let divisor = parseFloat(document.querySelector("#divisor").value);
     document.querySelector("#quotient").value = divide(dividend, divisor);
 }
-
 document.querySelector("#divideNumbers").addEventListener("click", divideNumbers);
 
 /* Selection Structures*/

@@ -21,7 +21,8 @@ parentElement.appendChild(element);*/
 // 4.1 Declare a function expression using const named dislayTemples that uses an arrow function to accept a list of temples as an array argument.
 const displayTemples = (temples => {
     document.createElement("article");
-    document.createElement("h3").textContent = templeName;
+    document.createElement("h3");
+    document.textContent = templeList;
     
 });
 /* async displayTemples Function */

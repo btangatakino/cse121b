@@ -7,7 +7,7 @@ const templesElement = document.querySelector("#temples");
 // 3.2 Declare a global empty array variable to store a list of temples named templeList.
 let templeList = [];
 
-// Funtion: displayTemples()
+// 4: Function: displayTemples()
 // 4.1 Declare a function expression using const named dislayTemples that uses an arrow function to accept a list of temples as an array arguement.
 const displayTemples = (temples => {    
     // 4.2 Process each temple in the temple array using a forEach method and do the following for each temple item:
@@ -29,7 +29,7 @@ const displayTemples = (temples => {
     })
 });
 
-/* async getTemples Function using fetch()*/
+/* 5: async getTemples Function using fetch()*/
 // 5.1 Create another function expression called getTemples. Make it an async anonymous, arrow function.
 const getTemples = async () => {
     // 5.2 In the function, declare a const variable named response that awaits the built-in fetch method calling the temple data, absolute URL given in Step 2 above.
@@ -40,13 +40,13 @@ const getTemples = async () => {
     // The last statement in the getTemples function calls the displayTemples function and passes it the list of temples (templeList).
     displayTemples(templeList);
 }
-/* reset Function */
+/* 6: reset Function */
 // 6.1 Declare a function expression named reset that clears all of the <article> elements from the templesElement.
 function reset() { 
     templesElement.innerHTML = "";
 }
 
-/* filterTemples Function */
+/* 7: filterTemples Function */
 // 7.1 Declare a function expression named filterTemples.
 // 7.2 The function should accept a argument in a parameter named temples.
 function filterTemples(temples) {
@@ -79,7 +79,7 @@ function filterTemples(temples) {
     }
 }
 
-/* Event Listener */
+// 8: Event Listener: fiterTemples Element change
 //8.1 Add a change event listener to the HTML element with an ID of filtered that calls the filterTemples function and sends a arrow function result with the templeList as the argument. 
 document.querySelector("#filtered").addEventListener("change", () => {
     filterTemples(templeList);

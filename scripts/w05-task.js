@@ -37,7 +37,7 @@ const getTemples = async () => {
     // 5.3 Convert your fetch response into a JavaScript object (.json) and assign the result to the templeList global array variable you declared in Step 3 above. Make sure the the execution of the code waits here as well until it finishes.
     templeList = await response.json();
     
-    // The last statement in the getTemples function calls the displayTemples function and passes it the list of temples (templeList).
+    // 5.4 The last statement in the getTemples function calls the displayTemples function and passes it the list of temples (templeList).
     displayTemples(templeList);
 }
 /* 6: reset Function */

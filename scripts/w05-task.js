@@ -8,7 +8,7 @@ const templesElement = document.querySelector("#temples");
 let templeList = [];
 
 // 4: Function: displayTemples()
-// 4.1 Declare a function expression using const named dislayTemples that uses an arrow function to accept a list of temples as an array arguement.
+// 4.1 Declare a function expression using const named dislayTemples that uses an arrow function to accept a list of temples as an array argument.
 const displayTemples = (temples => {    
     // 4.2 Process each temple in the temple array using a forEach method and do the following for each temple item:
     temples.forEach(temple => {

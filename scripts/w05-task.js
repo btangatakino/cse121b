@@ -72,7 +72,9 @@ function filterTemples(temples) {
             //let date = new Date(temples.dedicated);
             let older = temples.filter(temple => (temple.dedicated).split(",")[0] < 1950);
             displayTemples(older);
-            break;
+            /*let older = temples.filter(temple => Number(temple.dedicated.slice(0,4) < 1950));
+            displayTemples(older);
+            break;*/
         case "all":
             // 7.6.4 "all": no filter. Just use temples as the argument.
             displayTemples(temples);

@@ -70,11 +70,11 @@ function filterTemples(temples) {
         case "older":
             // 7.6.3 "older": filter for temples where the dedicated date is before 1950. (compare versus new Date(1950, 0, 1)).
             //let date = new Date(temples.dedicated);
-            let older = temples.filter(temple => (temple.dedicated).split(",")[0] < 1950);
+            /*let older = temples.filter(temple => (temple.dedicated).split(",")[0] < 1950);
+            displayTemples(older);*/
+            let older = temples.filter(temple => Number(temple.dedicated.slice(0,4) < 1950));
             displayTemples(older);
-            /*let older = temples.filter(temple => Number(temple.dedicated.slice(0,4) < 1950));
-            displayTemples(older);
-            break;*/
+            break;
         case "all":
             // 7.6.4 "all": no filter. Just use temples as the argument.
             displayTemples(temples);

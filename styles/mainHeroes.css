@@ -70,8 +70,8 @@ h1 {
     border-bottom: 1px solid #ccc;
 }
 
-#gridly h1 {
-    margin-top: 80px;
+#mainGrid h1 {
+    margin-top: 70px;
 }
 
 h2 {
@@ -198,7 +198,6 @@ footer {
 }
 
 /* ID Selectors */
-
 #home {
     margin-top: 125px;
     display: grid;
@@ -207,7 +206,6 @@ footer {
     align-items: center;
     justify-content: center;
 }
-
 
 #section1 {
     background-color: rgb(225, 250, 225, .5);
@@ -270,7 +268,6 @@ footer {
     color: navy;
     font-size: smaller;
 }
-
 
 #heroes img {
     width: 250px;

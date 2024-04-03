@@ -28,25 +28,25 @@
     <ul id="buttons">
       <li><a id="buttonsMenu">Filter</a></li>3
   </nav>
-  <!--<nav>
-    <div>
-      <input type="button" id="over90" value=`{PowerOve90}`>
-    </div>
-  </nav>-->
   <main id="mainGrid">
     <h1>W06: Project</h1>
     <h2>Some Movie Heroes</h2>
 
     <select id="filtered" title="Choose a data filter.">
       <option value="" disabled selected>Filter Heroes</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
       <option value="powerOver90">Power Over 90</option>
-      <option value="powerUnder20">Power Under 20</option>
-      <option value="heightOver180">Height Over 180 cm</option>
+      <option value="powerUnder25">Power Under 25</option>
+      <option value="heightOver180">Height Over 180 cm</option>      
+      <option value="heightUnder170">Height Under 170 cm</option>
+      <option value="marvelComics">Marvel Comics</option>
       <option value="all">No Filter</option>
     </select>
 
     <div id="heroes">
     </div>
+
   </main>
 
 
@@ -58,6 +58,7 @@
     document.getElementById("year").innerHTML = new Date().getFullYear();
   </script>
   <script src="scripts/heroes.js"></script>
+  
 </body>
 
 </html>

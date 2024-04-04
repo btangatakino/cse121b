@@ -124,7 +124,7 @@ function filterHeroes(heroes) {
         
         case "marvelComics":
             // Filter for heroes from Marvel Comics.
-            let marvelComics = heroes.filter(hero => hero.biography.publisher.includes("Marvel Comics"));
+            let marvelComics = heroes.filter(hero => hero.biography.publisher.toLowerCase().includes("marvel comics"));
             displayHeroes(marvelComics);
             break;
 

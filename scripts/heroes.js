@@ -158,6 +158,12 @@ function filterHeroes(heroes) {
             displayHeroes(universalStudios);
             break;
 
+        /*case "marvelComicsAndPowerOver90":
+            // Filter for heroes published by Universal Studios.
+            let marvelComicsAndPowerOver90 = heroes.filter(hero => (hero.biography.publisher.toLowerCase().includes("marvel comics") && Number(hero.powerstats.power > 90)));
+            displayHeroes(marvelComicsAndPowerOver90);
+            break;*/
+
         case "all":
             // Use no filter. Just use heroes as the argument.
             displayHeroes(heroes);

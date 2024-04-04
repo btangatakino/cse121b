@@ -19,7 +19,7 @@ const displayTemples = (temples => {
         heading.textContent = `${temple.templeName}`;
         // 4.2.3 Create an HTML <img> element and add the temple's imageUrl property to the src attribute and the temple's location property to the alt attribute.
         const imageElement = document.createElement("img");
-        imageElement.setAttribute("src", `${temple.imageUrl}`);
+        imageElement.setAttribute("src", temple.imageUrl);
         imageElement.setAttribute("alt", `${temple.location}`);    
         // 4.2.4 Append the <h3> element and the <img> element to the <article> element as children.
         article.appendChild(heading);

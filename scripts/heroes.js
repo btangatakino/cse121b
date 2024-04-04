@@ -114,7 +114,7 @@ function filterHeroes(heroes) {
             break;
 
         case "heightUnder170":
-            // Filter for heroes whose height is over 180cm.
+            // Filter for heroes whose height is under 170cm.
             let heightUnder170 = heroes.filter(hero => {
                 let heightInCm = parseInt(hero.appearance.height[1].split(" ")[0]);
             return (0 < heightInCm > 0 && heightInCm < 170);
@@ -123,9 +123,39 @@ function filterHeroes(heroes) {
             break;
         
         case "marvelComics":
-            // Filter for heroes from Marvel Comics.
+            // Filter for heroes published by Marvel Comics.
             let marvelComics = heroes.filter(hero => hero.biography.publisher.toLowerCase().includes("marvel comics"));
             displayHeroes(marvelComics);
+            break;
+
+        case "redRobin":
+            // Filter for heroes published by Red Robin.
+            let redRobin = heroes.filter(hero => hero.biography.publisher.toLowerCase().includes("red robin"));
+            displayHeroes(redRobin);
+            break;
+        
+        case "abcStudios":
+            // Filter for heroes published by ABC Studios.
+            let abcStudios = heroes.filter(hero => hero.biography.publisher.toLowerCase().includes("abc studios"));
+            displayHeroes(abcStudios);
+            break;
+
+        case "dcComics":
+            // Filter for heroes published by DC Comics.
+            let dcComics = heroes.filter(hero => hero.biography.publisher.toLowerCase().includes("dc comics"));
+            displayHeroes(dcComics);
+            break;
+
+        case "nbcHeroes":
+            // Filter for heroes published by NBC - Heroes.
+            let nbcHeroes = heroes.filter(hero => hero.biography.publisher.toLowerCase().includes("nbc - heroes"));
+            displayHeroes(nbcHeroes);
+            break;
+            
+        case "universalStudios":
+            // Filter for heroes published by Universal Studios.
+            let universalStudios = heroes.filter(hero => hero.biography.publisher.toLowerCase().includes("universal studios"));
+            displayHeroes(universalStudios);
             break;
 
         case "all":

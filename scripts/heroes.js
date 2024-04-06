@@ -1,21 +1,20 @@
-/* W06 Final Project */
-
-//document.querySelector("#over90").addEventListener("click", filterHeroes);
+/* W06 Final Project 
+Author: Beniamina Tangatakino*/
 
 // Declaring and initializing global variables
 const heroesElement = document.querySelector("#heroes");
 
-// Declare a global empty array variable to store a list of heroes named heroList.
+// Declaring a global empty array variable to store a list of heroes named heroList.
 let heroesList = [];
 
 // Function: displayHeroes()
-// function expression using an arrow function
+// Declaring a function expression named displayHeroes using an arrow function
 const displayHeroes = (heroes => {    
     // Process the heroes array using a forEach method:
     heroes.forEach(hero => {
-        // Create an HTML <article> element.
+        // Creating an HTML <article> element.
         const article = document.createElement("article");
-        // Create HTML <h3> and <h4> elements and add some heroe's properties to them.
+        // Creating HTML <h3> and <h4> elements and adding some heroe's properties to them.
         const heroName = document.createElement("h3");
         heroName.textContent = `${hero.name}`;
 
@@ -34,7 +33,7 @@ const displayHeroes = (heroes => {
         const height = document.createElement("h4")
         height.textContent = `${hero.appearance.height[1]}`;
 
-        // Create an HTML <img> element and add the heroes' images property to the src attribute and the heroes' name property to the alt attribute.
+        // Creating an HTML <img> element and adding the heroes' images property to the src attribute and the heroes' name property to the alt attribute.
         const imageElement = document.createElement("img");
         imageElement.setAttribute("src", hero.images.sm);
         imageElement.setAttribute("alt", `${hero.name}`);
@@ -48,8 +47,6 @@ const displayHeroes = (heroes => {
         article.appendChild(gender);
         // Appending the <article> element to the global heroesElement variable.
         heroesElement.appendChild(article);
-
-        //document.querySelector("#parentid .parenClass").insertAdjacentHTML('afterend', yourChildElement.outerHTML);
     })
 });
 
@@ -57,7 +54,7 @@ const displayHeroes = (heroes => {
 const getHeroes = async () => {
     // Declaring a const variable named response that awaits the built-in fetch method calling the hero data.
     const response = await fetch("https://raw.githubusercontent.com/btangatakino/cse121b/main/.vscode/heroes.json");
-    // Converting the  fetch response into a JavaScript object (.json) and assigning the result to the heroesList global array variable.
+    // Converting the fetch response into a JavaScript object (.json) and assigning the result to the heroesList global array variable.
     heroesList = await response.json();
     
     // Calling the displayHeroes function and passing it the heroesList.
@@ -158,11 +155,12 @@ function filterHeroes(heroes) {
             displayHeroes(universalStudios);
             break;
 
-        /*case "marvelComicsAndPowerOver90":
-            // Filter for heroes published by Universal Studios.
-            let marvelComicsAndPowerOver90 = heroes.filter(hero => (hero.biography.publisher.toLowerCase().includes("marvel comics") && Number(hero.powerstats.power > 90)));
+        case "marvelComicsAndPowerOver90":
+            // Filter for heroes published by Marvel Comics and also a Female.
+            let marvelComicsAndPowerOver90 = heroes.filter(hero => (hero.biography.publisher.toLowerCase().includes("marvel comics") && hero.appearance.gender.toLowerCase().includes("female")));
+            console.log(marvelComicsAndPowerOver90);
             displayHeroes(marvelComicsAndPowerOver90);
-            break;*/
+            break;
 
         case "all":
             // Use no filter. Just use heroes as the argument.
@@ -171,11 +169,11 @@ function filterHeroes(heroes) {
     }
 }
 
-// 8: Event Listener: fiterHeroes Element change
-//8.1 Add a change event listener to the HTML element with an ID of filtered that calls the filterHeroes function and sends an arrow function result with the heroesList as the argument. 
+// Event Listener: fiterHeroes Element change
+// Adding a change event listener to the HTML element with an ID of filtered that calls the filterHeroes function and sends an arrow function result with the heroesList as the argument. 
 document.querySelector("#filtered").addEventListener("change", () => {
     filterHeroes(heroesList);
 });
 
-// Call getHeroes function.
+// Calling getHeroes function.
 getHeroes();

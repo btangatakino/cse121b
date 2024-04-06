@@ -155,11 +155,10 @@ function filterHeroes(heroes) {
             displayHeroes(universalStudios);
             break;
 
-        case "marvelComicsAndPowerOver90":
+        case "marvelComicsAndFemaleAndPowerOver90":
             // Filter for heroes published by Marvel Comics and also a Female.
-            let marvelComicsAndPowerOver90 = heroes.filter(hero => (hero.biography.publisher.toLowerCase().includes("marvel comics") && hero.appearance.gender.toLowerCase().includes("female")));
-            console.log(marvelComicsAndPowerOver90);
-            displayHeroes(marvelComicsAndPowerOver90);
+            let marvelComicsAndFemaleAndPowerOver90 = heroes.filter(hero => (hero.biography.publisher.toLowerCase().includes("marvel comics") && hero.appearance.gender.toLowerCase().includes("female") && Number(hero.powerstats.power > 90)));
+            displayHeroes(marvelComicsAndFemaleAndPowerOver90);
             break;
 
         case "all":

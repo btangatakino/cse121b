@@ -35,7 +35,7 @@ const displayHeroes = (heroes => {
 
         // Creating an HTML <img> element and adding the heroes' images property to the src attribute and the heroes' name property to the alt attribute.
         const imageElement = document.createElement("img");
-        imageElement.setAttribute("src", hero.images.sm);
+        imageElement.setAttribute("src", hero.images.xs);
         imageElement.setAttribute("alt", `${hero.name}`);
         // Appending the <h3> element and the <img> element to the <article> element as children.
         article.appendChild(heroName);

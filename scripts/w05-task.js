@@ -17,6 +17,9 @@ const displayTemples = (temples => {
         // 4.2.2 Create an HTML <h3> element and add the temple's templeName property to this new element.
         const heading = document.createElement("h3");
         heading.textContent = `${temple.templeName}`;
+
+        const yearBuilt = document.createElement("h4");
+        yearBuilt.textContent = `${temple.dedicated}`;
         // 4.2.3 Create an HTML <img> element and add the temple's imageUrl property to the src attribute and the temple's location property to the alt attribute.
         const imageElement = document.createElement("img");
         imageElement.setAttribute("src", temple.imageUrl);
@@ -24,6 +27,7 @@ const displayTemples = (temples => {
         // 4.2.4 Append the <h3> element and the <img> element to the <article> element as children.
         article.appendChild(heading);
         article.appendChild(imageElement);
+        article.appendChild(yearBuilt);
         // 4.2.5 Append the <article> element to the global templesElement variable declared in Step 2.
         templesElement.appendChild(article);
     })
@@ -75,6 +79,13 @@ function filterTemples(temples) {
             let older = temples.filter(temple => Number(temple.dedicated.slice(0,4) < 1950));
             displayTemples(older);
             break;
+
+        case "newer":
+            // Filter for temples dedicated after the year 2000.
+            let newer = temples.filter(temple => Number(temple.dedicated.slice(0,4) > 2000));
+            console.log(newer);
+            displayTemples(newer);
+
         case "all":
             // 7.6.4 "all": no filter. Just use temples as the argument.
             displayTemples(temples);

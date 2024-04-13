@@ -19,7 +19,7 @@ const displayTemples = (temples => {
         heading.textContent = `${temple.templeName}`;
 
         const yearBuilt = document.createElement("h4");
-        yearBuilt.textContent = `${temple.dedicated}`;
+        yearBuilt.textContent = `${ temple.dedicated}`;
         // 4.2.3 Create an HTML <img> element and add the temple's imageUrl property to the src attribute and the temple's location property to the alt attribute.
         const imageElement = document.createElement("img");
         imageElement.setAttribute("src", temple.imageUrl);
@@ -83,7 +83,7 @@ function filterTemples(temples) {
         case "newer":
             // Filter for temples dedicated after the year 2000.
             let newer = temples.filter(temple => Number(temple.dedicated.slice(0,4) > 2000));
-            console.log(newer);
+            //console.log(newer);
             displayTemples(newer);
 
         case "all":
